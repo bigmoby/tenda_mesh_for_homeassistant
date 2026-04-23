@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tenda Mesh",
+        "description": "Enter the connection details for your Tenda Mesh router.",
+        "data": {
+          "host": "IP Address / Hostname",
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Tenda Mesh",
+        "description": "Update the connection details for your Tenda Mesh router.",
+        "data": {
+          "host": "IP Address / Hostname",
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the router. Check the IP address and network.",
+      "invalid_auth": "Authentication failed. Check your username and password.",
+      "unknown": "An unexpected error occurred. Check the Home Assistant logs."
+    },
+    "abort": {
+      "already_configured": "This router is already configured."
+    }
+  }
+}

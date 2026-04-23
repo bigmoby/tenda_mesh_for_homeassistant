@@ -1,0 +1,15 @@
+{
+  "domain": "tenda_mesh",
+  "name": "Tenda Mesh",
+  "version": "1.0.0",
+  "documentation": "https://github.com/bigmoby/tenda_mesh_for_homeassistant",
+  "issue_tracker": "https://github.com/bigmoby/tenda_mesh_for_homeassistant/issues",
+  "codeowners": ["@bigmoby"],
+  "config_flow": true,
+  "integration_type": "hub",
+  "iot_class": "local_polling",
+  "requirements": [
+    "pycryptodome>=3.19.0"
+  ],
+  "dependencies": []
+}
