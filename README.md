@@ -110,20 +110,16 @@ To easily view the table of connected devices on your Lovelace dashboard, you ca
 
 ### Example Markdown Card Configuration
 
-Add a new manual card to your dashboard and paste this code (make sure to replace `sensor.tenda_node_xxxxxx_clients` with the actual ID of your sensor):
+Add a new manual card to your dashboard and paste this code (make sure to replace `sensor.tenda_node_xxxxxx_connected_clients` with the actual ID of your sensor, which you can find in the integration's entity list):
 
 ```yaml
 type: markdown
-title: Devices on {{ state_attr('sensor.tenda_node_xxxxxx_clients', 'friendly_name') | replace(' Connected Clients', '') }}
-content: >
+content: |
+  ### Devices on {{ state_attr('sensor.tenda_node_xxxxxx_connected_clients', 'friendly_name') | replace(' Connected Clients', '') }}
   | Device Name | IP Address | MAC Address | Connection Type |
-
   | :--- | :--- | :--- | :--- |
-
-  {% for device in state_attr('sensor.tenda_node_xxxxxx_clients', 'connected_devices') %}
-    | {{ device.name }} | {{ device.ip }} | {{ device.mac }} | {{ device.connection }} |
-  {% else %}
-    | No devices | - | - | - |
+  {% for device in state_attr('sensor.tenda_node_xxxxxx_connected_clients', 'connected_devices') -%}
+  | {{ device.name }} | {{ device.ip }} | {{ device.mac }} | {{ device.connection }} |
   {% endfor %}
 ```
 
